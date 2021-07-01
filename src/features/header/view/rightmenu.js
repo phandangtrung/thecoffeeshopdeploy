@@ -92,8 +92,8 @@ const RightMenu = (props) => {
               setloadingmodal(false);
 
               notification.info({
-                message: `Signup Successfully`,
-                description: "Please check email to conform your account",
+                message: `Đăng ký thành công`,
+                description: "Kiểm tra email để xác nhận tài khoản",
                 icon: <CheckCircleOutlined style={{ color: "#33CC33" }} />,
                 placement: "bottomRight",
               });
@@ -261,7 +261,7 @@ const RightMenu = (props) => {
                         rules={[
                           {
                             required: true,
-                            message: "Please input your email!",
+                            message: "Nhập địa chỉ email!",
                           },
                         ]}
                       >
@@ -290,13 +290,13 @@ const RightMenu = (props) => {
                         rules={[
                           {
                             required: true,
-                            message: "Please input your password!",
+                            message: "Nhập mật khẩu!",
                           },
                         ]}
                       >
                         <Input.Password
                           style={{ width: "100%" }}
-                          placeholder="Password"
+                          placeholder="Mật khẩu"
                         />
                       </Form.Item>
                     </Col>
@@ -361,13 +361,13 @@ const RightMenu = (props) => {
                         rules={[
                           {
                             required: true,
-                            message: "Please input your Fullname!",
+                            message: "Nhập họ và tên!",
                           },
                         ]}
                       >
                         <Input
                           style={{ width: "100%" }}
-                          placeholder="Full name"
+                          placeholder="Họ và tên"
                         />
                       </Form.Item>
                     </Col>
@@ -379,7 +379,7 @@ const RightMenu = (props) => {
                         rules={[
                           {
                             required: true,
-                            message: "Please input your email!",
+                            message: "Nhập địa chỉ email!",
                           },
                         ]}
                       >
@@ -420,7 +420,7 @@ const RightMenu = (props) => {
                         rules={[
                           {
                             required: true,
-                            message: "Please input your password!",
+                            message: "Nhập mật khẩu!",
                           },
                         ]}
                       >
@@ -428,7 +428,7 @@ const RightMenu = (props) => {
                           style={{
                             width: "100%",
                           }}
-                          placeholder="input password"
+                          placeholder="Nhập mật khẩu"
                         />
                       </Form.Item>
                     </Col>
@@ -451,7 +451,7 @@ const RightMenu = (props) => {
                         type="primary"
                         htmlType="submit"
                       >
-                        Sign up
+                        Đăng ký
                       </Button>
                     </Col>
                   </Row>
