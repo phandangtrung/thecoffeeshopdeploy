@@ -92,8 +92,8 @@ const RightMenu = (props) => {
               setloadingmodal(false);
 
               notification.info({
-                message: `Đăng ký thành công`,
-                description: "Kiểm tra email để xác nhận tài khoản",
+                message: `Signup Successfully`,
+                description: "Please check email to conform your account",
                 icon: <CheckCircleOutlined style={{ color: "#33CC33" }} />,
                 placement: "bottomRight",
               });
@@ -203,7 +203,7 @@ const RightMenu = (props) => {
         <Menu.Item className="button-signup" key="mail">
           {islogin === undefined ? (
             <Button onClick={showModal} className="button-signup">
-              Đăng nhập
+              <UserOutlined style={{ fontSize: "25px" }} />
             </Button>
           ) : (
             <Dropdown overlay={menu}>
@@ -361,7 +361,7 @@ const RightMenu = (props) => {
                         rules={[
                           {
                             required: true,
-                            message: "Nhập họ và tên!",
+                            message: "Nhập họ và tên",
                           },
                         ]}
                       >
