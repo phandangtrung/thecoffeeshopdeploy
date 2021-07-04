@@ -44,7 +44,23 @@ const RightMenu = (props) => {
   const location = useLocation();
   const { md } = useBreakpoint();
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [cartcount, setcartcount] = useState(0);
+  const [currentStorage, SyncWithLocalStorage] = useState(localStorage || {});
+  const eventListenerFun = (e) => {
+    console.log("localStorage", JSON.parse(localStorage.cart));
+    let sumquanti = 0;
+    const lccart = JSON.parse(localStorage.cart);
+    lccart.map((lc) => {
+      sumquanti += lc.quantity;
+    });
+    setcartcount(sumquanti);
+    SyncWithLocalStorage({ ...localStorage.cart }); //<----spread it which will cause refrence to change
+  };
+  useEffect(() => {
+    window.addEventListener("storage", eventListenerFun);
 
+    return () => window.removeEventListener("storage", eventListenerFun);
+  }, [currentStorage]);
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -154,8 +170,8 @@ const RightMenu = (props) => {
       } catch (error) {
         console.log("failed to fetch login: ", error);
         notification.open({
-          message: "Fail Login",
-          description: "Your email or password is wrong",
+          message: "Đăng nhập không thành công",
+          description: "Email hoặc mật khẩu không đúng",
           icon: <ExclamationCircleFilled style={{ color: "red" }} />,
         });
       }
@@ -221,7 +237,7 @@ const RightMenu = (props) => {
           Signup
         </Button> */}
           <Link to="/shoppingpage">
-            <Badge count={0}>
+            <Badge count={cartcount}>
               <ShoppingCartOutlined style={{ fontSize: "25px" }} />
             </Badge>
           </Link>
