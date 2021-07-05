@@ -276,7 +276,8 @@ function ShoppingPage(props) {
         const response = await orderApi.createorder(orderdata);
         console.log("Fetch order succesfully: ", response);
         // setisloadorder(false);
-        localStorage.removeItem("cart");
+        // localStorage.removeItem("cart");
+        localStorage.setItem("cart", JSON.stringify([]));
         window.dispatchEvent(new Event("storage"));
         setcart([]);
         notification.open({
