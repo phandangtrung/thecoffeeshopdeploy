@@ -102,13 +102,14 @@ function ChangePass(props) {
   };
   useEffect(() => {
     const ilgg = Cookies.get("gglg");
-    if (ilgg === "true") console.log(">>trung true");
-    else console.log(">>trung false");
     setisgglg(ilgg);
-    let pwcc = Cookies.get("yassuozed").replace(/tc8887sssfqwrasdfasdf/g, "");
-    let tokenCustomer = Cookies.get("tokenCustomer");
-    settoken(tokenCustomer);
-    setpwc(pwcc);
+    if (ilgg === "true") {
+      console.log(">>trung true");
+      let pwcc = Cookies.get("yassuozed").replace(/tc8887sssfqwrasdfasdf/g, "");
+      let tokenCustomer = Cookies.get("tokenCustomer");
+      settoken(tokenCustomer);
+      setpwc(pwcc);
+    } else console.log(">>trung false");
   }, []);
 
   return (
