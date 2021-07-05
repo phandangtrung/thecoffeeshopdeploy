@@ -4,7 +4,7 @@ function KommunicateChat() {
   useEffect(() => {
     (function (d, m) {
       var kommunicateSettings = {
-        appId: "2cc5087684aec26bf6f6da8ee45cc0bec",
+        appId: "2e58e5d91c21f1dc10a13a455c132960a",
         popupWidget: true,
         automaticChatOpenOnNavigation: true,
       };
