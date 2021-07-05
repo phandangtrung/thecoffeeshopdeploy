@@ -268,7 +268,7 @@ function Product() {
               >
                 <img
                   alt="icon_location"
-                  style={{ width: "28px", height: "46px" }}
+                  style={{ width: "23px", height: "46px" }}
                   src={Images.LOCATE}
                 />
                 <Form
