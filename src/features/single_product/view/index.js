@@ -275,7 +275,7 @@ function SingleProduct({ props }) {
                 ) : (
                   <Result
                     status="warning"
-                    title="You must be logged in to comment."
+                    title="Bạn phải đăng nhập mới có thể bình luận."
                   />
                 )}
               </TabPane>
