@@ -69,9 +69,15 @@ function ShoppingPage(props) {
       setcart(JSON.parse(localStorage.getItem("cart")));
       settotalPrice(calculateTotal(JSON.parse(localStorage.getItem("cart"))));
       setfaketotal(calculateTotal(JSON.parse(localStorage.getItem("cart"))));
-      setischeckcart(false);
+
       setbranchID(JSON.parse(localStorage.getItem("branchID")));
       fetchaddrbr(JSON.parse(localStorage.getItem("branchID")));
+    }
+    if (
+      JSON.parse(localStorage.getItem("cart")) !== null &&
+      JSON.parse(localStorage.getItem("cart")) !== undefined
+    ) {
+      setischeckcart(false);
     }
   }, []);
   const navControlStyle = {
