@@ -75,7 +75,7 @@ function ShoppingPage(props) {
     }
     if (
       JSON.parse(localStorage.getItem("cart")) !== null &&
-      JSON.parse(localStorage.getItem("cart")) !== undefined
+      JSON.parse(localStorage.getItem("cart")).length !== 0
     ) {
       setischeckcart(false);
     }
