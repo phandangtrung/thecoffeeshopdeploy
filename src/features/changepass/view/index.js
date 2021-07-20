@@ -103,13 +103,13 @@ function ChangePass(props) {
   useEffect(() => {
     const ilgg = Cookies.get("gglg");
     setisgglg(ilgg);
-    if (ilgg === "true") {
-      console.log(">>trung true");
+    if (ilgg !== "true") {
+      console.log(">>trung false");
       let pwcc = Cookies.get("yassuozed").replace(/tc8887sssfqwrasdfasdf/g, "");
       let tokenCustomer = Cookies.get("tokenCustomer");
       settoken(tokenCustomer);
       setpwc(pwcc);
-    } else console.log(">>trung false");
+    } else console.log(">>trung true");
   }, []);
 
   return (
