@@ -80,7 +80,9 @@ function Product() {
         form.setFieldsValue({
           selectBrid: newBraL[0].name,
         });
-        setProductList(newBraL[0].listProduct);
+        setProductList(
+          newBraL[0].listProductfilter((prd) => prd.name !== undefined)
+        );
         setstatusbr(newBraL[0].status);
       } else {
         const bralready = newBraL.filter((nb) => nb._id === checkidb);
@@ -88,7 +90,9 @@ function Product() {
         form.setFieldsValue({
           selectBrid: bralready[0].name,
         });
-        setProductList(bralready[0].listProduct);
+        setProductList(
+          bralready[0].listProductfilter((prd) => prd.name !== undefined)
+        );
         setstatusbr(bralready[0].status);
       }
 
@@ -180,7 +184,7 @@ function Product() {
       (pro) => pro.categoryId === cateid
     );
     console.log(">>>newproList", newprolist);
-    setProductList(newprolist);
+    setProductList(newprolist.filter((prd) => prd.name !== undefined));
   };
   function onChange(a, b, c) {
     console.log(a, b, c);
