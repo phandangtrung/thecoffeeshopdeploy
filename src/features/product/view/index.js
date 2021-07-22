@@ -97,8 +97,9 @@ function Product() {
       const checkproductwr = newBraL[0].listProduct.filter(
         (prd) => prd.name !== undefined
       );
-      console.log(">>checkproductwr", checkproductwr);
-      setfakeProductList(newBraL[0].listProduct);
+      // console.log(">>checkproductwr", checkproductwr);
+      // setfakeProductList(newBraL[0].listProduct);
+      setfakeProductList(checkproductwr);
       setloadProduct(false);
     } catch (error) {
       console.log("failed to fetch product list: ", error);
