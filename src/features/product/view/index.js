@@ -81,7 +81,7 @@ function Product() {
           selectBrid: newBraL[0].name,
         });
         setProductList(
-          newBraL[0].listProductfilter((prd) => prd.name !== undefined)
+          newBraL[0].listProduct.filter((prd) => prd.name !== undefined)
         );
         setstatusbr(newBraL[0].status);
       } else {
@@ -91,7 +91,7 @@ function Product() {
           selectBrid: bralready[0].name,
         });
         setProductList(
-          bralready[0].listProductfilter((prd) => prd.name !== undefined)
+          bralready[0].listProduct.filter((prd) => prd.name !== undefined)
         );
         setstatusbr(bralready[0].status);
       }
