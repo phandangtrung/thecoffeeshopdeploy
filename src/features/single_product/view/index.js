@@ -112,12 +112,12 @@ function SingleProduct({ props }) {
         setcommentList([...commentList, response.newComment]);
         setloadcomment(false);
         notification.open({
-          message: "You posted a comment",
+          message: "Bạn đã đăng một bình luận",
           icon: <SmileOutlined style={{ color: "#108ee9" }} />,
         });
       } catch (error) {
         notification.open({
-          message: "Comment fail",
+          message: "Có gì đó khổng ổn rồi, thử lại sau",
           icon: <ExceptionOutlined style={{ color: "#red" }} />,
         });
         console.log("failed to fetch product list: ", error);
@@ -136,7 +136,7 @@ function SingleProduct({ props }) {
   });
   const { TextArea } = Input;
   const [ratevalue, setratevalue] = useState(3);
-  const desc = ["TERRIBLE", "BAD", "NORMAL", "GOOD", "WONDERFUL"];
+  const desc = ["Rất tệ", "Tệ", "Tạm", "Tốt", "Rất tốt"];
   const handleChangeRate = (value) => {
     setratevalue(value);
   };
@@ -239,7 +239,7 @@ function SingleProduct({ props }) {
                     <Spin spinning={loadcomment}>
                       <Form.Item name="content">
                         <TextArea
-                          placeholder="Type your comment here"
+                          placeholder="Nhập bình luận của bạn"
                           autoSize={{ minRows: 5, maxRows: 8 }}
                         />
                       </Form.Item>
@@ -268,7 +268,7 @@ function SingleProduct({ props }) {
                         type="primary"
                         style={{ float: "left", border: "0px" }}
                       >
-                        Comment
+                        Bình luận
                       </Button>
                     </Spin>
                   </Form>
