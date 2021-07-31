@@ -90,6 +90,7 @@ function ProductTag(props) {
                 size_L: props.size_L,
                 img: props.img,
                 quantity: props.quantity,
+                categoryId: props.categoryId,
               },
               addtoCart: () => addtoCart(),
             }}

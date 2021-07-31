@@ -155,14 +155,7 @@ function SingleProduct({ props }) {
               nl._id !== location.state.idpro
           )
         );
-        console.log(
-          ">>>trung ne",
-          newlistb.filter(
-            (nl) =>
-              nl.categoryId === location.state.categoryId &&
-              nl._id !== location.state.idpro
-          )
-        );
+        console.log(">>>trung ne", location.state.idpro);
         setstatusbr(bralready[0].status);
       }
 
@@ -356,6 +349,16 @@ function SingleProduct({ props }) {
           ) : (
             productList.map((product) => (
               <Col lg={8} xs={24} sm={24} key={product._id}>
+                {/* <ProductTag
+                  _id={product._id}
+                  name={product.name}
+                  img={product.imagesProduct}
+                  price={product.prices}
+                  quantity={product.quantity}
+                  size_L={product.size_L}
+                  description={product.description}
+                  storequantity={product.quantity}
+                /> */}
                 <div
                   style={{
                     width: "300px",
