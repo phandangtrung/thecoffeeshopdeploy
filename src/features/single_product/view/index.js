@@ -337,7 +337,7 @@ function SingleProduct({ props }) {
         </Row>
         <Row
           style={{
-            paddingTop: "20px",
+            paddingTop: "40px",
             height: "400px",
             marginBottom: "30px",
           }}
@@ -375,6 +375,7 @@ function SingleProduct({ props }) {
                       width: "100%",
                       display: "flex",
                       justifyContent: "center",
+                      lineHeight: "30px",
                     }}
                   >
                     <div
