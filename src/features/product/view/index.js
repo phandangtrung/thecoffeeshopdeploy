@@ -344,6 +344,7 @@ function Product() {
                     size_L={product.size_L}
                     description={product.description}
                     storequantity={product.quantity}
+                    categoryId={product.categoryId}
                   />
                 </Col>
               ))
