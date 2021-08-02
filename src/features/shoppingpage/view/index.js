@@ -50,6 +50,15 @@ import couponApi from "../../../api/couponApi";
 import Modal from "antd/lib/modal/Modal";
 function ShoppingPage(props) {
   const { Text, Link } = Typography;
+  const formatCurrency = (monney) => {
+    const mn = String(monney);
+    return mn
+      .split("")
+      .reverse()
+      .reduce((prev, next, index) => {
+        return (index % 3 ? next : next + ".") + prev;
+      });
+  };
   useEffect(() => {
     Geocode.setApiKey("AIzaSyCGncPyxKmV_5JpsaVpg66nw5MuqpL6FT4");
     const fetchProductList = async () => {
@@ -504,15 +513,27 @@ function ShoppingPage(props) {
         );
         console.log(">>getbycoupon", getbycoupon);
         if (getbycoupon.length > 0) {
-          const perse = Number(getbycoupon[0].percentage);
-          const totlapr = faketotal - faketotal * (perse / 100);
-          setcouponId(getbycoupon[0]._id);
-          settotalPrice(totlapr);
-          setcodeprice(faketotal * (perse / 100));
-          setalteraplly(
-            `Bạn đã nhập mã  ${getbycoupon[0].content} giảm ${getbycoupon[0].percentage}%`
-          );
-          setcodeloading(false);
+          if (getbycoupon[0].condition < faketotal) {
+            const perse = Number(getbycoupon[0].percentage);
+            const totlapr = faketotal - faketotal * (perse / 100);
+            setcouponId(getbycoupon[0]._id);
+            settotalPrice(totlapr);
+            setcodeprice(faketotal * (perse / 100));
+            setalteraplly(
+              `Bạn đã nhập mã  ${getbycoupon[0].content} giảm ${getbycoupon[0].percentage}%`
+            );
+            setcodeloading(false);
+          } else {
+            setalteraplly(
+              `Đơn hàng phải có giá trị tối thiểu là ${formatCurrency(
+                getbycoupon[0].condition
+              )}đ để sử dụng mã`
+            );
+            setcouponId("");
+            settotalPrice(faketotal);
+            setcodeprice(0);
+            setcodeloading(false);
+          }
         } else {
           setalteraplly("Mã không hợp lệ");
           setcouponId("");
